@@ -31,7 +31,11 @@ public class UserService {
         User user = userRepository.findByUserId(userId);
 
         //If you don't add http here, it throws error
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(), Department.class);
+        // Department department = restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(), Department.class);
+
+        //Since this url can change, but altogether we know that we will always connect with the DEPARTMENT-SERVICE,
+        //we can give the application name instead, as both of these are connected to service registry
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), Department.class);
 
         vo.setUser(user);
         vo.setDepartment(department);
