@@ -10,7 +10,7 @@ public class GatewayConfig {
 
 //    Alternate way of configuring the api gateway routes
 //    First one is via application.yml
-//
+
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder routeLocatorBuilder){
         return routeLocatorBuilder.routes()
@@ -22,5 +22,6 @@ public class GatewayConfig {
                 .uri("lb://DEPARTMENT-SERVICE"))
         .build();
     }
+
 
 }
