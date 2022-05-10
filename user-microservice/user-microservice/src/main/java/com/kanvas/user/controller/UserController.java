@@ -27,4 +27,5 @@ public class UserController {
         return userService.getUserWithDepartment(userId);
     }
 
+
 }

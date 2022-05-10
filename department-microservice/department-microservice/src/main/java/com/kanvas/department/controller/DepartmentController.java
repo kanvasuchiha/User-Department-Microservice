@@ -16,7 +16,7 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping("/")
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@RequestBody Department department) throws InterruptedException {
         log.info("Inside saveDepartment method of DepartmentController");
         return departmentService.saveDepartment(department);
     }

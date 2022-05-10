@@ -19,6 +19,7 @@ public class UserService {
     @Autowired
     private RestTemplate restTemplate;
 
+
     public User saveUser(User user) {
         log.info("Inside saveUser of UserService");
         return userRepository.save(user);
@@ -42,4 +43,5 @@ public class UserService {
         return vo;
 
     }
+
 }

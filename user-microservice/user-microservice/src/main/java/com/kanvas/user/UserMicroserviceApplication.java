@@ -13,9 +13,10 @@ public class UserMicroserviceApplication {
 		SpringApplication.run(UserMicroserviceApplication.class, args);
 	}
 
-	@Bean
+
 	//Since there can be multiple microservices with the same name connected to eureka server,
 	//we need to tell RestTemplate to load balance
+	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
